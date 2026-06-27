@@ -28,4 +28,4 @@ A Flask-based cybersecurity web application that detects suspicious job offers u
 
 ## Developed By
 
-Dipak Varude
+Deepak Varude
