@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Analysis Result</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+<div class="card shadow-lg p-4">
+
+<h1 class="text-center text-danger">
+
+🛡 Security Analysis Report
+
+</h1>
+
+<hr>
+
+<h3>
+
+Status :
+
+<span class="badge bg-{{ color }}">
+
+{{ status }}
+
+</span>
+
+</h3>
+
+<h3 class="mt-3">
+
+Risk Score :
+
+{{ score }}%
+
+</h3>
+<hr>
+
+<h4>
+
+📧 Recruiter Email
+
+</h4>
+
+<p>
+
+<strong>Email:</strong>
+
+{{ email }}
+
+</p>
+
+<p>
+
+<strong>Status:</strong>
+
+{% if email_status == "Trusted" %}
+
+<span class="badge bg-success">
+✅ Trusted
+</span>
+
+{% else %}
+
+<span class="badge bg-danger">
+⚠️ Suspicious
+</span>
+
+{% endif %}
+
+</p>
+<div class="progress mt-3">
+
+<div
+class="progress-bar bg-{{ color }}"
+role="progressbar"
+style="width: {{ score }}%;">
+
+{{ score }}%
+
+</div>
+
+</div>
+
+<hr>
+
+<h4>
+
+⚠ Indicators Found
+
+</h4>
+
+<ul class="list-group">
+
+{% for reason in reasons %}
+
+<li class="list-group-item">
+
+{{ reason }}
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h4>
+
+🛡 Security Recommendation
+
+</h4>
+
+<div class="alert alert-warning">
+
+<ul class="mb-0">
+
+<li>Never pay registration or training fees.</li>
+
+<li>Verify the recruiter's email address.</li>
+
+<li>Check the official company website.</li>
+
+<li>Never share OTP, Aadhaar or bank details.</li>
+
+<li>Report suspicious job offers.</li>
+
+</ul>
+
+</div>
+<div class="d-grid gap-2">
+
+<a href="/download"
+class="btn btn-success">
+
+📄 Download Security Report
+
+</a>
+
+<a href="/"
+class="btn btn-primary">
+
+Analyze Another Job Offer
+
+</a>
+
+</div>
+</div>
+
+</div>
+
+</body>
+
+</html>
